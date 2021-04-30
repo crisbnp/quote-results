@@ -1,28 +1,59 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
-  </div>
+  <v-app class="app">
+    <v-app-bar app color="black">
+      <div class="d-flex align-center">
+        <v-img
+          alt="Paymentshield Logo"
+          class="shrink mr-2"
+          contain
+          src="./assets/white_logo.png"
+          transition="scale-transition"
+          width="160"
+        />
+      </div>
+
+      <v-spacer></v-spacer>
+
+      <div class="white--text text-uppercase">
+        <p>Quote reference 
+          <br> 
+          PSL-BCHI-1234567
+        </p>
+      </div>
+    </v-app-bar>
+
+    <v-main>
+      <ProgressBar/>
+    </v-main>
+  </v-app>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
+import ProgressBar from './components/ProgressBar.vue';
 
 export default {
   name: "App",
+
   components: {
-    HelloWorld,
+    ProgressBar
   },
+
+  data: () => ({
+    //
+  }),
 };
 </script>
 
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+  @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+  $font-family: 'Lato', serif;
+  .app {
+    .headline,
+    [class*='display-'],
+    [class*='text-'] {
+      color: #36405a;
+      font-family: $font-family, sans-serif !important;
+    }
+    font-family: $font-family, sans-serif !important;
+  }
 </style>
