@@ -27,7 +27,7 @@
           <v-card outlined class="d-flex py-4 px-2 justify-space-between">
            <div class="text-center">
                 <v-card-title
-                  class="grey--text wordbreak"
+                  class="grey--text"
                 >Buildings <br> Cover</v-card-title>
                 <v-card-subtitle class="black--text text-h6">
                   £500,000
@@ -71,7 +71,7 @@
 
             <div class="text-center">
                 <v-card-title
-                  class="grey--text wordbreak"
+                  class="grey--text"
                 >Home <br> Emergency</v-card-title>
                 <v-card-subtitle class="black--text text-h6">
                   No
@@ -111,11 +111,11 @@
 
       <v-row>
         <v-col no-gutters col="12">
-          <v-card outlined class="d-flex py-4 px-2 justify-space-between">
+          <v-card v-for="insuranceItem in insurance" v-bind:key="insuranceItem.id" v-bind:insurance="insurance" outlined class="d-flex py-4 px-2 justify-space-between">
             
-            <img v-bind:src="`../assets/${insurance[0].logo}`" v-bind:alt="insurance[0].insuranceName"/>
+            <img v-bind:src="`../assets/${insuranceItem.logo}`" v-bind:alt="insuranceItem.insuranceName"/>
             <v-card-title>
-              £ {{insurance[0].price}}
+              £ {{insuranceItem.price}}
             </v-card-title>
             <v-overflow-btn
               :items="paymentoptions"
@@ -124,37 +124,41 @@
               outlined
               flat
             ></v-overflow-btn>
-            <div>
-              <p>Builldings accidental damage</p>
-              <div v-if="isBuildingsADincluded === false">
-                <p>+ {{insurance[0].buildingsAccidentalDamage}}</p>
-              
+            <div class="d-flex flex-column">
+              <div>
+                <p>Builldings accidental damage</p>
+                <div v-if="isBuildingsADincluded === false">
+                  <p>+ {{insurance[0].buildingsAccidentalDamage}}</p>
+                
+                </div>
+                <div v-else>
+                  <p>Included</p>
+                </div>
+                <v-switch
+                  v-model="isBuildingsADincluded"
+                  inset
+                  color="#009BA4"
+                ></v-switch>
+                
               </div>
-              <div v-else>
-                <p>Included</p>
+              <div>
+                <p>Contents accidental damage</p>
+                <div class="d-flex justify-space-between align-center">
+                  <div v-if="isContentsADIncluded === false">
+                    <p>+ {{insurance[0].buildingsAccidentalDamage}}</p>
+                  
+                  </div>
+                
+                  <div v-else>
+                    <p>Included</p>
+                  </div>
+                  <v-switch
+                    v-model="isContentsADIncluded"
+                    inset
+                    color="#009BA4"
+                  ></v-switch>
+                </div>
               </div>
-              <v-switch
-                v-model="isBuildingsADincluded"
-                inset
-                color="#009BA4"
-              ></v-switch>
-              
-            </div>
-            <div>
-              <p>Contents accidental damage</p>
-              <div v-if="isContentsADIncluded === false">
-                <p>+ {{insurance[0].buildingsAccidentalDamage}}</p>
-              
-              </div>
-              <div v-else>
-                <p>Included</p>
-              </div>
-              <v-switch
-                v-model="isContentsADIncluded"
-                inset
-                color="#009BA4"
-              ></v-switch>
-              
             </div>
             <v-card-actions>
               <v-btn large tile depressed color="white--text" class="no-uppercase px-10">
