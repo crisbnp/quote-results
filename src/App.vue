@@ -7,7 +7,7 @@
           class="shrink mr-2"
           contain
           src="./assets/white_logo.png"
-          transition="scale-transition"
+          transition="scale-ransition"
           width="160"
         />
       </div>
@@ -24,18 +24,21 @@
 
     <v-main>
       <ProgressBar/>
+      <Results/>
     </v-main>
   </v-app>
 </template>
 
 <script>
 import ProgressBar from './components/ProgressBar.vue';
+import Results from './components/Results.vue'
 
 export default {
   name: "App",
 
   components: {
-    ProgressBar
+    ProgressBar,
+    Results
   },
 
   data: () => ({
@@ -55,5 +58,18 @@ export default {
       font-family: $font-family, sans-serif !important;
     }
     font-family: $font-family, sans-serif !important;
+
+    .v-btn {
+      background-color: #E50046 !important;
+    }
+
+    .v-main__wrap {
+      background-color: #f2f2f5;
+    }
+
+    .v-sheet {
+      margin: 0 auto;
+    }
   }
+
 </style>
