@@ -1,6 +1,6 @@
 <template>
   <v-app class="app">
-    <v-app-bar app color="black">
+    <v-app-bar app color="black" height="80">
       <div class="d-flex align-center">
         <v-img
           alt="Paymentshield Logo"

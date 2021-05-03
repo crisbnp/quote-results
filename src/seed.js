@@ -4,13 +4,13 @@ export const insuranceData = [
     logo: "lv-100.png",
     insuranceName: "LV100",
     price: 36.89,
-    buildingsAccidentalDamage: 26.92,
+    buildingsAccidentalDamage: "+ 26.92",
     contentsAccidentalDamage: 12.67,
     lowestPrice: true
   },
   {
     id: 2,
-    logo: "UKgeneral_logo_100x100",
+    logo: "UKgeneral_logo_100x100.png",
     insuranceName: "UK General",
     price: 37.89,
     buildingsAccidentalDamage: 26.92,
