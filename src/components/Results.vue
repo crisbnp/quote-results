@@ -110,8 +110,8 @@
       </v-row>
 
       <v-row>
-        <v-col no-gutters cols="12" xs="12" >
-          <div v-for="insuranceItem in insurance" v-bind:insurance="insurance" v-bind:key="insuranceItem.id">
+        <v-col no-gutters cols="12" sm="12" v-for="insuranceItem in insurance" v-bind:insurance="insurance" v-bind:key="insuranceItem.id">
+    
             <v-card v-if="insuranceItem.price != null" outlined class="py-4 px-2 mb-6">
               <v-container >
                 <v-row>
@@ -143,6 +143,7 @@
                           </div> -->
                           <v-switch
                             v-model="isBuildingsADincluded"
+                            selected
                             inset
                             color="#009BA4"
                             v-on:click="update(insuranceItem.id)" 
@@ -190,13 +191,13 @@
                   <v-col cols="6" sm="4" md="9"> 
                     <v-card-title class="text-subtitle-2 text-sm-subtitle-2 text-md-subtitle-2 text-lg-subtitle-2 my-4">
                       Declined to quote
-                      <br> Property too close to a flood plain
+                      <br>! Property too close to a flood plain
                     </v-card-title>
                   </v-col>
                 </v-row>
               </v-container>
             </v-card>
-          </div>
+      
         </v-col>
       </v-row>
     </v-container>
