@@ -121,6 +121,7 @@
                   <v-col cols="6" sm="4" md="3"> 
                     <v-card-title class="text-h4 text-sm-h4 text-md-h4 text-lg-h3 my-4">
                       £ {{insuranceItem.price}}
+
                     </v-card-title>
                     <v-overflow-btn
                       :items="paymentoptions"
@@ -138,34 +139,26 @@
                             <p>{{insuranceItem.buildingsAccidentalDamage}}</p>
                           
                           </div>
-                          <!-- <div v-else>
-                            <p>Included</p>
-                          </div> -->
                           <v-switch
-                            v-model="isBuildingsADincluded"
+                            v-model="isBuildingsADincluded[insuranceItem.id]"
                             selected
                             inset
                             color="#009BA4"
-                            v-on:click="update(insuranceItem.id)" 
+                            v-on:click="updateBuildingsAD(insuranceItem.id)"
                           ></v-switch>
                         </div>
                       </div>
                       <div>
                         <p>Contents accidental damage</p>
                         <div class="d-flex justify-space-between align-center">
-                          <div v-if="isContentsADIncluded === false">
-                            <p>+ {{insuranceItem.contentsAccidentalDamage}}</p>
-                          
-                          </div>
-                        
-                          <div v-else>
-                            <p>Included</p>
+                          <div>
+                            <p>{{insuranceItem.contentsAccidentalDamage}}</p>               
                           </div>
                           <v-switch
-                            v-model="isContentsADIncluded"
+                            v-model="isContentsADIncluded[insuranceItem.id]"
                             inset
                             color="#009BA4"
-                            v-on:click="update(insuranceItem.id)" 
+                            v-on:click="updateContentsAD(insuranceItem.id)" 
                           ></v-switch>
                         </div>
                       </div>
@@ -213,24 +206,45 @@ export default {
     return {
       insurance: insuranceData,
       paymentoptions: ["Monthly", "Annually", "3 Months Deferred"],
-      isBuildingsADincluded: false,
-      isContentsADIncluded: false,
+      isBuildingsADincluded: [],
+      isContentsADIncluded: [],
     }
-  }, 
+  },
+  computed: {
+
+    total: function(num) {
+      return this.insurance.forEach((each) => {
+        console.log(each.total)
+        return each.price = each.price + num
+      })
+    }
+  },
   methods: {
-    update(insuranceId) {
+    updateBuildingsAD(insuranceId) {
       console.log("checked")
       console.log(insuranceId)
+      console.log(this.isBuildingsADincluded)
       this.insurance.map((each) => {
-        if(each.id === insuranceId && this.isBuildingsADincluded == false) {
+        if(each.id === insuranceId && this.isBuildingsADincluded[insuranceId] == false) {
           console.log(each.buildingsAccidentalDamage )
-          return each.buildingsAccidentalDamage = "+ 26.92"
-        } else if (each.id === insuranceId && this.isBuildingsADincluded == true) {
+          console.log(this.isBuildingsADincluded[insuranceId] )
+          return each.buildingsAccidentalDamage = "+ £26.92"
+        } else if (each.id === insuranceId && this.isBuildingsADincluded[insuranceId] == true) {
           console.log(each.buildingsAccidentalDamage)
           return each.buildingsAccidentalDamage = "Included"
         }
       })
-    }
+    },
+    updateContentsAD(insuranceId) {
+      console.log(this.isContentsADIncluded)
+      this.insurance.map((each) => {
+        if (each.id === insuranceId && this.isContentsADIncluded[insuranceId] == false) {
+          return each.contentsAccidentalDamage = "+ £12.67"
+        } else if (each.id === insuranceId && this.isContentsADIncluded[insuranceId] == true) {
+          return each.contentsAccidentalDamage = "Included"
+        }
+      })
+    },
   }
 }
 </script>

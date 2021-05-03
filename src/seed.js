@@ -4,8 +4,9 @@ export const insuranceData = [
     logo: "lv-100.png",
     insuranceName: "LV100",
     price: 36.89,
-    buildingsAccidentalDamage: "+ 26.92",
-    contentsAccidentalDamage: 12.67,
+    totalprice: null,
+    buildingsAccidentalDamage: '+ £26.92',
+    contentsAccidentalDamage: '+ £12.67',
     lowestPrice: true
   },
   {
@@ -13,8 +14,8 @@ export const insuranceData = [
     logo: "UKgeneral_logo_100x100.png",
     insuranceName: "UK General",
     price: 37.89,
-    buildingsAccidentalDamage: 26.92,
-    contentsAccidentalDamage: 12.67,
+    buildingsAccidentalDamage: '+ £26.92',
+    contentsAccidentalDamage: '+ £12.67',
     lowestPrice: false
   },
   { 
@@ -22,8 +23,8 @@ export const insuranceData = [
     logo: "prestige_logo.png",
     insuranceName: "Prestige",
     price: 49.61,
-    buildingsAccidentalDamage: 26.92,
-    contentsAccidentalDamage: 12.67,
+    buildingsAccidentalDamage: '+ £26.92',
+    contentsAccidentalDamage: '+ £12.67',
     lowestPrice: false
   },
   {
@@ -31,8 +32,8 @@ export const insuranceData = [
     logo: "AXA.png",
     insuranceName: "AXA",
     price: null,
-    buildingsAccidentalDamage: 26.92,
-    contentsAccidentalDamage: 12.67,
+    buildingsAccidentalDamage: '+ £26.92',
+    contentsAccidentalDamage: '+ £12.67',
     lowestPrice: false
   },
 ]
