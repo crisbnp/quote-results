@@ -114,7 +114,7 @@
     
             <v-card v-if="insuranceItem.price != null" outlined class="py-4 px-2 mb-6">
               <v-container >
-                <v-row>
+                <v-row align="center" justify="center">
                   <v-col cols="6" sm="4" md="3">
                     <v-img v-bind:src="require(`../assets/${insuranceItem.logo}`)" v-bind:alt="insuranceItem.insuranceName" contain max-width="150"></v-img>
                   </v-col>  
@@ -123,20 +123,20 @@
                       £ {{insuranceItem.price}}
 
                     </v-card-title>
-                    <v-overflow-btn
+                    <v-select
                       :items="paymentoptions"
                       label="Monthly"
                       outlined
                       flat
-                    ></v-overflow-btn>
+                    ></v-select>
                   </v-col>
                   <v-col cols="12" sm="4" md="3">
                     <div class="d-flex flex-column">
                       <div>
-                        <p>Builldings accidental damage</p>
+                        <p>Buildings accidental damage</p>
                         <div class="d-flex justify-space-between align-center">
                           <div>
-                            <p>{{insuranceItem.buildingsAccidentalDamage}}</p>
+                            <p class="text-h5">{{insuranceItem.buildingsAccidentalDamage}}</p>
                           
                           </div>
                           <v-switch
@@ -151,9 +151,9 @@
                       <div>
                         <p>Contents accidental damage</p>
                         <div class="d-flex justify-space-between align-center">
-                          <div>
-                            <p>{{insuranceItem.contentsAccidentalDamage}}</p>               
-                          </div>
+                          
+                            <p class="text-h5">{{insuranceItem.contentsAccidentalDamage}}</p>               
+                          
                           <v-switch
                             v-model="isContentsADIncluded[insuranceItem.id]"
                             inset
