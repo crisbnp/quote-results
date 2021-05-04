@@ -121,8 +121,12 @@
                   <v-col cols="6" sm="4" md="3"> 
                     <v-card-title class="text-h4 text-sm-h4 text-md-h4 text-lg-h3 my-4">
                       £ {{insuranceItem.price}}
-
+                     
                     </v-card-title>
+                    <div v-if="insuranceItem.id == 1" class="ml-4 my-0 pa-0">
+                      <p class="text-h6 text-sm-h6 text-md-h6 text-lg-h5 warning--text" >Lowest Price</p>
+                    </div>
+                   
                     <v-select
                       :items="paymentoptions"
                       label="Payment Plans"
@@ -208,15 +212,6 @@ export default {
       paymentoptions: ["Monthly", "Annually", "3 Months Deferred"],
       isBuildingsADincluded: [],
       isContentsADIncluded: [],
-    }
-  },
-  computed: {
-
-    total: function(num) {
-      return this.insurance.forEach((each) => {
-        console.log(each.total)
-        return each.price = each.price + num
-      })
     }
   },
   methods: {

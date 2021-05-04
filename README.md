@@ -20,6 +20,8 @@ Link to live site: https://crisbnp.github.io/quote-results/
 
 2. Drop down menu says "Monthly" as the label. I have changed that to "Payment Plans" as I feel that will be better understood by users.
 
+---
+
 ## To set up the app locally:
 
 ### Project setup
