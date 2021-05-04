@@ -25,6 +25,7 @@
     <v-main>
       <ProgressBar/>
       <Results/>
+      <DefaqtoWidget/>
     </v-main>
 
     <v-footer height="100" width="100%" color="black">
@@ -34,14 +35,16 @@
 
 <script>
 import ProgressBar from './components/ProgressBar.vue';
-import Results from './components/Results.vue'
+import Results from './components/Results.vue';
+import DefaqtoWidget from './components/DefaqtoWidget.vue';
 
 export default {
   name: "App",
 
   components: {
     ProgressBar,
-    Results
+    Results,
+    DefaqtoWidget,
   },
 
 };
