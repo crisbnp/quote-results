@@ -125,7 +125,7 @@
                     </v-card-title>
                     <v-select
                       :items="paymentoptions"
-                      label="Monthly"
+                      label="Payment Plans"
                       outlined
                       flat
                     ></v-select>
