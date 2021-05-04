@@ -26,6 +26,9 @@
       <ProgressBar/>
       <Results/>
     </v-main>
+
+    <v-footer height="100" width="100%" color="black">
+    </v-footer>
   </v-app>
 </template>
 
@@ -41,9 +44,6 @@ export default {
     Results
   },
 
-  data: () => ({
-    //
-  }),
 };
 </script>
 
