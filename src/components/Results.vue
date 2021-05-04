@@ -115,10 +115,10 @@
             <v-card v-if="insuranceItem.price != null" outlined class="py-4 px-2 mb-6">
               <v-container >
                 <v-row align="center" justify="center">
-                  <v-col cols="6" sm="4" md="3">
+                  <v-col cols="12" sm="4" md="3">
                     <v-img v-bind:src="require(`../assets/${insuranceItem.logo}`)" v-bind:alt="insuranceItem.insuranceName" contain max-width="150"></v-img>
                   </v-col>  
-                  <v-col cols="6" sm="4" md="3"> 
+                  <v-col cols="12" sm="4" md="3"> 
                     <v-card-title class="text-h4 text-sm-h4 text-md-h4 text-lg-h3 my-4">
                       £ {{insuranceItem.price}}
                      
