@@ -182,10 +182,10 @@
             <v-card v-else outlined class="py-4 px-2 mb-6" color="#f2f2f5">
               <v-container>
                 <v-row>
-                  <v-col cols="6" sm="4" md="3">
+                  <v-col cols="12" sm="4" md="3">
                     <v-img v-bind:src="require(`../assets/${insuranceItem.logo}`)" v-bind:alt="insuranceItem.insuranceName" contain max-width="150"></v-img>
                   </v-col>  
-                  <v-col cols="6" sm="4" md="9"> 
+                  <v-col cols="12" sm="4" md="9"> 
                     <v-card-title class="text-subtitle-2 text-sm-subtitle-2 text-md-subtitle-2 text-lg-subtitle-2 my-4">
                       Declined to quote
                       <br>! Property too close to a flood plain
